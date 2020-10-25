@@ -5,14 +5,14 @@
 
 	.data
 student:
-	.asciiz "Student" 	# Place your name in the quotations in place of Student
+	.asciiz "Shaan Sandhu" 	# Place your name in the quotations in place of Student
 	.globl	student
 nl:	.asciiz "\n"
 	.globl nl
 
 
-op1:	.word 7				# change the multiplication operands
-op2:	.word 19			# for testing.
+op1:	.word 11				# change the multiplication operands
+op2:	.word 11			# for testing.
 
 
 	.text
@@ -29,7 +29,7 @@ main:					# main has to be a global label
 	la	$a0, student		# takes the address of string as an argument 
 	syscall	
 
-	slti	$t2, $t0, 2		# check number of arguments
+	slti	$t2, $t0, 3		# check number of arguments
 	bne     $t2, $zero, operands
 	j	ready
 
@@ -55,8 +55,8 @@ multiply:
 ##############################################################################
 # Your code goes here.
 # Should have the same functionality as running
-#	multu	$a1, $a0
-#	mflo	$a2
+	multu	$a1, $a0
+	mflo	$a2
 ##############################################################################
 
 
